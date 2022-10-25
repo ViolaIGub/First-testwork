@@ -6,7 +6,7 @@ int[] parameters = GetParams(ReadLine());
 int[] baseArray = GetArrayFromString(parameters[0], parameters[1], parameters[2]);
 WriteLine(String.Join(" ", baseArray));
 int count = FindSize(baseArray, 100, 999);
-WriteLine(String.Join(count));
+WriteLine(count);
 int[] newArray = GetNewArray(count, 100, 999);
 WriteLine(String.Join(" ", newArray));
 
@@ -31,12 +31,12 @@ int [] GetArrayFromString(int size, int minValue, int maxValue)
     return res;
 }
 
-int [] FindSize(int[] inArray, int left, int right)
+int FindSize(int[] baseArray, int left, int right)
 {
     int resalt = 0;
-    for(int i = 0; i < inArray.Length; i++)
+    for(int i = 0; i < baseArray.Length; i++)
     {
-        if (inArray[i] >= left && inArray[i] <= right)
+        if (baseArray[i] >= left && baseArray[i] <= right)
         {
             resalt++;
         }
@@ -49,7 +49,7 @@ int [] GetNewArray(int count, int left, int right)
     int[] solution = new int[count];
     for(int i = 0; i < count; i++)
     {
-        solution[i] = 
+        solution[i] = baseArray[i];
     }
     return solution;
 }
